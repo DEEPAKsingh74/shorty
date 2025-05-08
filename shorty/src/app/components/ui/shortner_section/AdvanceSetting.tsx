@@ -8,8 +8,6 @@ import {
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 interface Settings {
-  deviceSpecific: boolean;
-  mobileUrl: string;
   countryRestriction: boolean;
   showCountryDropdown: boolean;
   expiryType: "clicks" | "time" | "none";
@@ -51,8 +49,6 @@ const AdvancedSettings = ({
   };
 
   const resetSettings = () => {
-    updateSetting("deviceSpecific", false);
-    updateSetting("mobileUrl", "");
     updateSetting("countryRestriction", false);
     updateSetting("showCountryDropdown", false);
     updateSetting("expiryType", "none");
@@ -70,7 +66,7 @@ const AdvancedSettings = ({
         onClick={() =>
           updateSetting("showAdvanceSettings", !settings.showAdvanceSettings)
         }
-        className="flex items-center text-blue-600 hover:text-blue-800 font-medium"
+        className="flex items-center text-indigo-600 hover:text-indigo-800 font-medium"
       >
         {settings.showAdvanceSettings ? (
           <>
@@ -99,58 +95,6 @@ const AdvancedSettings = ({
             </button>
           </div>
 
-          {/* Device Specific Setting */}
-          <div className="space-y-3">
-            <label className="flex items-center space-x-3 cursor-pointer">
-              <div className="relative">
-                <input
-                  type="checkbox"
-                  className="sr-only"
-                  checked={settings.deviceSpecific}
-                  onChange={() =>
-                    updateSetting("deviceSpecific", !settings.deviceSpecific)
-                  }
-                />
-                <div
-                  className={`block w-12 h-6 rounded-full transition-colors ${
-                    settings.deviceSpecific ? "bg-blue-500" : "bg-gray-300"
-                  }`}
-                ></div>
-                <div
-                  className={`absolute left-1 top-1 bg-white w-4 h-4 rounded-full transition-transform ${
-                    settings.deviceSpecific ? "transform translate-x-6" : ""
-                  }`}
-                ></div>
-              </div>
-              <div className="flex items-center">
-                <FaMobile className="text-gray-600 mr-2" />
-                <span className="text-gray-700 font-medium">
-                  Mobile-specific URL
-                </span>
-              </div>
-            </label>
-
-            {settings.deviceSpecific && (
-              <div className="ml-4 pl-6 border-l-2 border-gray-200">
-                <div className="flex items-center bg-white rounded-lg border border-gray-300 overflow-hidden">
-                  <div className="px-3 py-2 bg-gray-100 text-gray-500">
-                    <FaLink />
-                  </div>
-                  <input
-                    type="url"
-                    value={settings.mobileUrl}
-                    onChange={(e) => updateSetting("mobileUrl", e.target.value)}
-                    placeholder="Enter mobile-specific URL"
-                    className="flex-grow px-3 py-2 outline-none"
-                  />
-                </div>
-                <p className="text-xs text-gray-500 mt-1">
-                  Leave blank to use same URL for all devices
-                </p>
-              </div>
-            )}
-          </div>
-
           {/* Country Restriction */}
           <div className="space-y-3">
             <label className="flex items-center space-x-3 cursor-pointer">
@@ -168,7 +112,7 @@ const AdvancedSettings = ({
                 />
                 <div
                   className={`block w-12 h-6 rounded-full transition-colors ${
-                    settings.countryRestriction ? "bg-blue-500" : "bg-gray-300"
+                    settings.countryRestriction ? "bg-indigo-500" : "bg-gray-300"
                   }`}
                 ></div>
                 <div
@@ -223,7 +167,7 @@ const AdvancedSettings = ({
                               type="checkbox"
                               checked={blockedCountries.includes(country.code)}
                               onChange={() => toggleCountry(country.code)}
-                              className="h-4 w-4 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
+                              className="h-4 w-4 text-indigo-600 rounded border-gray-300 focus:ring-indigo-500"
                             />
                             <span className="ml-3 text-gray-700">
                               {country.name}
@@ -252,7 +196,7 @@ const AdvancedSettings = ({
                   name="expiry"
                   checked={settings.expiryType === "none"}
                   onChange={() => updateSetting("expiryType", "none")}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span className="text-gray-700 font-medium">Never expire</span>
               </label>
@@ -265,7 +209,7 @@ const AdvancedSettings = ({
                   name="expiry"
                   checked={settings.expiryType === "clicks"}
                   onChange={() => updateSetting("expiryType", "clicks")}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span className="text-gray-700 font-medium">Expire after</span>
                 <input
@@ -289,7 +233,7 @@ const AdvancedSettings = ({
                   name="expiry"
                   checked={settings.expiryType === "time"}
                   onChange={() => updateSetting("expiryType", "time")}
-                  className="h-4 w-4 text-blue-600 focus:ring-blue-500"
+                  className="h-4 w-4 text-indigo-600 focus:ring-indigo-500"
                 />
                 <span className="text-gray-700 font-medium">Expire in</span>
                 <input

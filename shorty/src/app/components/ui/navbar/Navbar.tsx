@@ -43,7 +43,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center">
-              <FaLink className="h-6 w-6 text-blue-600" />
+              <FaLink className="h-6 w-6 text-indigo-600" />
               <span className="ml-2 text-xl font-bold text-gray-900">
                 TinyURL
               </span>
@@ -53,33 +53,33 @@ const Navbar = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8 items-center">
             <Link
-              href="/features"
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+              href="#tool-info"
+              className="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"
             >
               Features
             </Link>
             <Link
               href="/analytics"
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors flex items-center"
+              className="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors flex items-center"
             >
               <FaChartLine className="mr-1" /> Analytics
             </Link>
             <Link
               href="/pricing"
-              className="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors"
+              className="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors"
             >
               Pricing
             </Link>
             <div className="flex space-x-4 ml-4">
               <Link
                 href="/login"
-                className="text-gray-700 hover:text-blue-600 px-4 py-2 text-sm font-medium transition-colors flex items-center"
+                className="text-gray-700 hover:text-indigo-600 px-4 py-2 text-sm font-medium transition-colors flex items-center"
               >
                 <FaUserCircle className="mr-1" /> Log In
               </Link>
               <Link
                 href="/signup"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
+                className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center"
               >
                 Sign Up <FiExternalLink className="ml-1" />
               </Link>
@@ -90,7 +90,7 @@ const Navbar = () => {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-blue-600 focus:outline-none"
+              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-indigo-600 focus:outline-none"
               aria-expanded="false"
             >
               <span className="sr-only">Open main menu</span>
@@ -110,21 +110,21 @@ const Navbar = () => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
               href="/features"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               Features
             </Link>
             <Link
               href="/analytics"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center"
+              className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 flex items-center"
               onClick={() => setIsOpen(false)}
             >
               <FaChartLine className="mr-2" /> Analytics
             </Link>
             <Link
               href="/pricing"
-              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50"
+              className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50"
               onClick={() => setIsOpen(false)}
             >
               Pricing
@@ -132,14 +132,14 @@ const Navbar = () => {
             <div className="pt-4 pb-2 border-t border-gray-200">
               <Link
                 href="/login"
-                className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-gray-50 flex items-center"
+                className="px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-indigo-600 hover:bg-gray-50 flex items-center"
                 onClick={() => setIsOpen(false)}
               >
                 <FaUserCircle className="mr-2" /> Log In
               </Link>
               <Link
                 href="/signup"
-                className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-center text-white bg-blue-600 hover:bg-blue-700"
+                className="mt-2 block w-full px-3 py-2 rounded-md text-base font-medium text-center text-white bg-indigo-600 hover:bg-indigo-700"
                 onClick={() => setIsOpen(false)}
               >
                 Sign Up
